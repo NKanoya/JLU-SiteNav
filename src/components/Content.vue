@@ -1,9 +1,9 @@
 <script setup>
-    // 图标组件
-    import Icon from './Icon.vue';
+    import Icon from './Icon.vue';                 // 图标组件
+    import AccessTag from './AccessTag.vue';       // 标签组件
+    import TopContents from "./TopContents.vue";   // 顶部内容
 
-    // 标签组件
-    import AccessTag from '@/components/AccessTag.vue';
+
 </script>
 
 <template>
@@ -16,43 +16,14 @@
             <input autocomplete="off" type="text" id="searchBox" class="search-box" placeholder="搜索...">
         </div>
     </div>
-    <div class="top">
-        <div id="floatingBox" class="floating-box">链接复制成功！</div>
 
-        <div class="top-content">
-
-
-
-
-
-
-
-            <div class="card">
-                <div class="inline">
-                    <h3>
-                        <Icon type="web"/> WEBVPN
-                    </h3>
-                    <AccessTag>校园网访问</AccessTag>
-                    <p style="display: inline-block;">链接至校内网站资源导航。</p><br />
-
-                    <span class="site">vpn.jlu.edu.cn</span>
-                    <AccessTag type="mail" />
-                </div>
-                <div class="plus-icon site-vpn-new" data-tooltip="new-page">
-                    <Icon type="plus" />
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <div id="floatingBox" class="floating-box">链接复制成功！</div>
+    <TopContents />
 
     <!-- 主体内容 -->
     <div class="container">
         <div class="container-content">
             <!-- 网站卡片 -->
-
-
-
             <div class="card need-copy need-copy-1" data-tooltip="tip-1">
                 <div class="inline">
                     <h3>
