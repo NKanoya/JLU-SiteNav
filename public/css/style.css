@@ -189,50 +189,6 @@ a:hover {
 .copy-icon:active {
     background-color: #888;
 }
-
-/* 登录标签 */
-.tag {
-    display: inline-block;
-    background-color: #e0e0e0;
-    color: #333;
-    font-size: 0.5em;
-    padding: 3px 5px 3px 5px;
-    border-radius: 5px;
-    margin-right: 5px;
-}
-
-/* 邮箱登录标签 */
-.mail-tag {
-    display: inline-block;
-    background-color: #e0e0f0;
-    color: #113;
-    font-size: 0.5em;
-    padding: 3px 5px 3px 5px;
-    border-radius: 5px;
-    margin-right: 5px;
-
-}
-
-.num-tag {
-    display: inline-block;
-    background-color: #ddf0dd;
-    color: #030;
-    font-size: 0.5em;
-    padding: 3px 5px 3px 5px;
-    border-radius: 5px;
-    margin-right: 5px;
-}
-
-.card-tag {
-    display: inline-block;
-    background-color: #f0e0e0;
-    color: #311;
-    font-size: 0.5em;
-    padding: 3px 5px 3px 5px;
-    border-radius: 5px;
-    margin-right: 5px;
-}
-
 .inline {
     display: inline;
 }
