@@ -23,3 +23,19 @@ import AccessTag from "@/components/AccessTag.vue";
         </div>
     </div>
 </template>
+<style scoped>
+    /* 主体容器 */
+    .top {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .top-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 1000px;
+        margin-bottom: 30px;
+    }
+</style>
