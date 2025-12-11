@@ -7,6 +7,7 @@
     cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 270px;
 }
 
 .card:hover {
@@ -25,6 +26,16 @@
     font-size: 14px;
     color: #333;
     flex-grow: 1;
+}
+
+.card .description-content {
+    margin-bottom: 32px;
+}
+
+.site-box {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
 }
 
 .site {

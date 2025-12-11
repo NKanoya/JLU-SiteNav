@@ -1,27 +1,20 @@
 <script setup>
+import SiteCard from "@/components/cards/SiteCard.vue";
+import {sites} from "@/data/sites.js";
 
-import { topSites } from "@/data/top-sites.ts";
-import TopCard from "./TopCard.vue";
-import AccessTag from "../tag/AccessTag.vue";
+const topSites = sites.slice(0,2);
 </script>
 <template>
-        <TopCard
-            v-for="item in topSites"
-            :icon="item.icon"
-            :siteName="item.title"
-            :site="item.site"
-            :accessTag="item.accessTag"
-        >
-            <template v-for="line in item.description">
-                <template v-if="line === null">
-                    <p class="inline-block"></p><br />
-                </template>
-                <template v-else>
-                    <AccessTag v-if="line.tag !== null">{{ line.tag.sign }}</AccessTag>
-                    <p class="inline-block">{{ line.content }}</p><br />
-                </template>
-            </template>
-        </TopCard>
+    <template v-for="site in topSites">
+        <SiteCard
+            :title="site.title"
+            :icon="site.icon"
+            :description="site.description"
+            :site="site.site"
+            :access-tag="site.accessTag"
+            :redirect-disabled="site.redirectDisabled"
+        />
+    </template>
 </template>
 <style scoped>
     @import '@/assets/plus-icon.css';

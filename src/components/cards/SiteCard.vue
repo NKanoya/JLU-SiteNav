@@ -3,10 +3,10 @@
     import AccessTag from "@/components/tag/AccessTag.vue";
 
     const props = defineProps<{
-        star: boolean,
-        title: string,
-        description: string[],
-        site: string
+        icon: string | null;
+        title: string;
+        description: string[];
+        site: string;
         accessTag: string | null;
         redirectDisabled: boolean;
     }>();
@@ -16,9 +16,9 @@
     <div class="card">
         <div class="inline">
             <h3>
-                <Icon type="star" v-if="props.star" />
+                <Icon v-if="props.icon !== null" :type="props.icon" />
                 {{ props.title }}</h3>
-            <p>
+            <p class="description-content">
                 <template v-if="description === null || description.length === 0">
                     暂未添加描述。
                 </template>
@@ -29,10 +29,13 @@
                     </template>
                 </template>
             </p>
-            <span class="site">{{ props.site }}</span>
-            <template v-if="props.accessTag !== null">
-                <AccessTag :type="props.accessTag" >{{ props.accessTag }}</AccessTag>
-            </template>
+            <div class="site-box">
+                <span class="site">{{ props.site }}</span>
+                <template v-if="props.accessTag !== null">
+                    <AccessTag :type="props.accessTag" >{{ props.accessTag }}</AccessTag>
+                </template>
+            </div>
+
         </div>
 
         <!-- 加号标志 -->
