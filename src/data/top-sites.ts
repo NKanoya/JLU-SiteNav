@@ -1,4 +1,17 @@
-export const topSites = [
+export interface DescriptionLine {
+    tag: { sign: string } | null;
+    content: string | null;
+}
+
+export interface TopSiteInfo {
+    title: string;
+    icon: string;
+    description: [DescriptionLine | null, DescriptionLine | null];
+    site: string;
+    accessTag: string | null;
+}
+
+export const topSites : TopSiteInfo[] = [
     {
         title: '网络服务',
         icon: 'wifi',
@@ -6,7 +19,8 @@ export const topSites = [
             {
                 tag: null,
                 content: 'PC校园网注册、充值。'
-            }
+            },
+            null
         ],
         site: 'ip.jlu.edu.cn',
         accessTag: 'card'

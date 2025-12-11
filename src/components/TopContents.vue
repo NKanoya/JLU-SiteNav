@@ -1,8 +1,8 @@
 <script setup>
 
-import { topSites } from "@/data/top-sites.js";
-import TopCard from "@/components/TopCard.vue";
-import AccessTag from "@/components/AccessTag.vue";
+import { topSites } from "@/data/top-sites.ts";
+import TopCard from "./TopCard.vue";
+import AccessTag from "./AccessTag.vue";
 </script>
 <template>
     <div class="top">
@@ -15,8 +15,13 @@ import AccessTag from "@/components/AccessTag.vue";
                 :accessTag="item.accessTag"
             >
                 <template v-for="line in item.description">
-                    <AccessTag v-if="line.tag !== null">{{ line.tag.sign }}</AccessTag>
-                    <p style="display: inline-block;">{{ line.content }}</p><br />
+                    <template v-if="line === null">
+                        <p style="display: inline-block"></p><br />
+                    </template>
+                    <template v-else>
+                        <AccessTag v-if="line.tag !== null">{{ line.tag.sign }}</AccessTag>
+                        <p style="display: inline-block;">{{ line.content }}</p><br />
+                    </template>
                 </template>
             </TopCard>
 

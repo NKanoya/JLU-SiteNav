@@ -2,8 +2,6 @@
     import Icon from './Icon.vue';                 // 图标组件
     import AccessTag from './AccessTag.vue';       // 标签组件
     import TopContents from "./TopContents.vue";   // 顶部内容
-
-
 </script>
 
 <template>
