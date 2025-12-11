@@ -106,10 +106,10 @@ export const sites : SiteInfo[] = [
     },
     {
         star: false,
-        title: '正版化软件平台',
-        site: 'zbhrj1.jlu.edu.cn',
-        description: ['Visio、Office、Matlab等软件正版下载。'],
-        accessTag: 'card',
+        title: '教务处',
+        site: 'jwc.jlu.edu.cn',
+        description: ['电子教务处。提供成绩公示、成绩证明申请等功能。'],
+        accessTag: null,
         redirectDisabled: false
     },
     {
