@@ -1,6 +1,6 @@
 <script setup>
-    import Icon from './Icon.vue';
-    import AccessTag from "./AccessTag.vue";
+    import Icon from '../icon/Icon.vue';
+    import AccessTag from "../tag/AccessTag.vue";
 
     const props = defineProps({
         icon: String,

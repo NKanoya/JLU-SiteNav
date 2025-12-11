@@ -2,7 +2,7 @@
 
 import { topSites } from "@/data/top-sites.ts";
 import TopCard from "./TopCard.vue";
-import AccessTag from "./AccessTag.vue";
+import AccessTag from "../tag/AccessTag.vue";
 </script>
 <template>
     <div class="top">
