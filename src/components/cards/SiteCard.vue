@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import Icon from "@/components/Icon.vue";
-    import AccessTag from "@/components/tag/AccessTag.vue";
+    import CardContent from "@/components/cards/CardContent.vue";
 
     const props = defineProps<{
         icon: string | null;
@@ -10,49 +10,55 @@
         accessTag: string | null;
         redirectDisabled: boolean;
     }>();
+
+    const accessInThisTab = (site: string) : void => {
+        window.location.href = 'http://' + site;
+    }
+
+    const accessInNewTab = (site: string) : void => {
+        window.open('http://' + site, '_blank');
+    }
+
 </script>
 
 <template>
-    <div class="card">
-        <div class="inline">
-            <h3>
-                <Icon v-if="props.icon !== null" :type="props.icon" />
-                {{ props.title }}</h3>
-            <p class="description-content">
-                <template v-if="description === null || description.length === 0">
-                    暂未添加描述。
-                </template>
-                <template v-else v-for="(line, count) in description">
-                    {{ line }}
-                    <template v-if="count + 1 != description.length">
-                        <br/>
-                    </template>
-                </template>
-            </p>
-            <div class="site-box">
-                <span class="site">{{ props.site }}</span>
-                <template v-if="props.accessTag !== null">
-                    <AccessTag :type="props.accessTag" >{{ props.accessTag }}</AccessTag>
-                </template>
+    <template v-if="!props.redirectDisabled">
+        <div class="card">
+            <!-- 允许跳转 -->
+            <div class="inline" @click="accessInThisTab(props.site)">
+                <CardContent
+                    :icon="props.icon"
+                    :title="props.title"
+                    :description="props.description"
+                    :site="site"
+                    :accessTag="props.accessTag"
+                />
             </div>
-
-        </div>
-
-        <!-- 加号标志 -->
-        <template v-if="!props.redirectDisabled">
-            <div class="plus-icon valid-plus-icon">
+            <div class="plus-icon valid-plus-icon" @click="accessInNewTab(props.site)">
                 <Icon type="plus" />
             </div>
-        </template>
-        <template v-else>
+        </div>
+    </template>
+    <template v-else>
+        <div class="card">
+            <!-- 不允许跳转，无点击跳转事件 -->
+            <div class="inline" style="cursor: default">
+                <CardContent
+                    :icon="props.icon"
+                    :title="props.title"
+                    :description="props.description"
+                    :site="site"
+                    :accessTag="props.accessTag"
+                />
+            </div>
             <div class="need-copy plus-icon">
                 <Icon type="gray-plus" />
             </div>
             <div class="copy-icon">
                 <Icon type="copy" />
             </div>
-        </template>
-    </div>
+        </div>
+    </template>
 </template>
 
 <style scoped>
