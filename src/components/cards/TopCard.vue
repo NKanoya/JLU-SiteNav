@@ -1,5 +1,5 @@
 <script setup>
-    import Icon from '../icon/Icon.vue';
+    import Icon from '../Icon.vue';
     import AccessTag from "../tag/AccessTag.vue";
 
     const props = defineProps({
@@ -13,7 +13,7 @@
 <template>
     <div class="card inline">
         <!-- 右下角加号 -->
-        <div class="plus-icon">
+        <div class="plus-icon valid-plus-icon">
             <Icon type="plus" />
         </div>
 
@@ -35,5 +35,6 @@
 </template>
 
 <style scoped>
-
+@import '@/assets/card.css';
+@import '@/assets/plus-icon.css';
 </style>

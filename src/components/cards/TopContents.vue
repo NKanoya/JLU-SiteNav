@@ -5,42 +5,26 @@ import TopCard from "./TopCard.vue";
 import AccessTag from "../tag/AccessTag.vue";
 </script>
 <template>
-    <div class="top">
-        <div class="top-content">
-            <TopCard
-                v-for="item in topSites"
-                :icon="item.icon"
-                :siteName="item.title"
-                :site="item.site"
-                :accessTag="item.accessTag"
-            >
-                <template v-for="line in item.description">
-                    <template v-if="line === null">
-                        <p style="display: inline-block"></p><br />
-                    </template>
-                    <template v-else>
-                        <AccessTag v-if="line.tag !== null">{{ line.tag.sign }}</AccessTag>
-                        <p style="display: inline-block;">{{ line.content }}</p><br />
-                    </template>
+        <TopCard
+            v-for="item in topSites"
+            :icon="item.icon"
+            :siteName="item.title"
+            :site="item.site"
+            :accessTag="item.accessTag"
+        >
+            <template v-for="line in item.description">
+                <template v-if="line === null">
+                    <p class="inline-block"></p><br />
                 </template>
-            </TopCard>
-
-        </div>
-    </div>
+                <template v-else>
+                    <AccessTag v-if="line.tag !== null">{{ line.tag.sign }}</AccessTag>
+                    <p class="inline-block">{{ line.content }}</p><br />
+                </template>
+            </template>
+        </TopCard>
 </template>
 <style scoped>
-    /* 主体容器 */
-    .top {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .top-content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        width: 1000px;
-        margin-bottom: 30px;
-    }
+    @import '@/assets/plus-icon.css';
+    @import '@/assets/card.css';
+    @import '@/assets/utility.css';
 </style>

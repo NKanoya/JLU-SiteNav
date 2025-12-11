@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import Icon from "@/components/icon/Icon.vue";
+    import Icon from "@/components/Icon.vue";
     import AccessTag from "@/components/tag/AccessTag.vue";
 
     const props = defineProps<{
@@ -37,12 +37,12 @@
 
         <!-- 加号标志 -->
         <template v-if="!props.redirectDisabled">
-            <div class="plus-icon" data-tooltip="new-page">
+            <div class="plus-icon valid-plus-icon">
                 <Icon type="plus" />
             </div>
         </template>
         <template v-else>
-            <div class="need-copy invalid-plus-icon">
+            <div class="need-copy plus-icon">
                 <Icon type="gray-plus" />
             </div>
             <div class="copy-icon">
@@ -53,5 +53,6 @@
 </template>
 
 <style scoped>
-
+    @import '@/assets/plus-icon.css';
+    @import '@/assets/card.css';
 </style>

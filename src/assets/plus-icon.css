@@ -1,0 +1,20 @@
+/* 新标签页加号图标的样式 */
+.plus-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    transition: transform 0.6s ease;
+    z-index: 999;
+}
+
+/* 可以点击的加号图标：
+ * 鼠标悬浮时旋转放大 */
+.valid-plus-icon:hover {
+    transform: rotate(90deg) scale(1.2);
+}

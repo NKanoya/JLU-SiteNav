@@ -1,6 +1,8 @@
 <script setup>
     import TopContents from "./cards/TopContents.vue";   // 顶部内容
     import CenterSites from "./cards/CenterSites.vue";   // 中间卡片
+
+    import '../assets/top.css'
 </script>
 
 <template>
@@ -15,7 +17,13 @@
     </div>
 
     <div id="floatingBox" class="floating-box">链接复制成功！</div>
-    <TopContents />
+
+    <!-- 顶部卡片 -->
+    <div class="top">
+        <div class="top-content">
+            <TopContents />
+        </div>
+    </div>
 
     <!-- 主体内容 -->
     <div class="container">

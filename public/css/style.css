@@ -80,60 +80,6 @@ body {
     width: 1000px;
 }
 
-/* 卡片样式 */
-.card {
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    padding: 20px;
-    background-color: #fff;
-    /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); */
-    /* transition: transform 0.3s, box-shadow 0.3s; */
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* border:2px solid #ddd; */
-}
-
-.card:hover {
-    background: #f5f5f5;
-    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); */
-}
-
-.card h3 {
-    margin: 0 0 10px;
-    font-size: 20px;
-    color: #000000;
-}
-
-.card p {
-    margin: 0 0 5px 0;
-    font-size: 14px;
-    color: #333;
-    flex-grow: 1;
-}
-
-a {
-    text-decoration: none;
-    /* 去除下划线 */
-    color: inherit;
-    /* 继承父元素的文字颜色 */
-}
-
-a:hover {
-    color: inherit;
-}
-
-.site {
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 5px;
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 5px;
-}
-
 /* 悬浮框 */
 .tooltip {
     display: none;
@@ -173,9 +119,6 @@ a:hover {
 
 .copy-icon:active {
     background-color: #888;
-}
-.inline {
-    display: inline;
 }
 
 /* 复制链接悬浮框 */
@@ -225,34 +168,3 @@ a:hover {
     animation: slideInOut 2s ease-in-out forwards;
 }
 
-.plus-icon {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    transition: transform 0.6s ease;
-    z-index: 999;
-}
-
-.plus-icon:hover {
-    transform: rotate(90deg) scale(1.2);
-}
-
-.invalid-plus-icon {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    transition: transform 0.6s ease;
-    z-index: 999;
-}
