@@ -14,7 +14,10 @@ const internalSites : SiteInfo[] = [
     {
         title: '网络服务',
         icon: 'wifi',
-        description: ['PC校园网注册、充值。'],
+        description: [
+            'PC校园网账号注册、入网申请、网费充值服务网站。',
+            '网费充值请进入后点击右下方「自助服务平台」进行登录。'
+        ],
         site: 'ip.jlu.edu.cn',
         accessTag: 'card',
         priority: 6,
@@ -24,8 +27,7 @@ const internalSites : SiteInfo[] = [
         title: 'WEBVPN',
         icon: 'web',
         description: [
-            '经过账号认证后，可在校外网络环境访问图书馆期刊资源及校内网站。',
-            '在校园网内访问时，链接至校内网站资源导航。',
+            '用于在非校园网环境中登录访问校内网站，或在校外浏览图书馆期刊、文献资源。'
         ],
         site: 'vpn.jlu.edu.cn',
         accessTag: 'mail',
@@ -55,8 +57,7 @@ const internalSites : SiteInfo[] = [
         title: '学在吉大',
         site: 'ilearntec.jlu.edu.cn',
         description: [
-            '线下课程录播、回放平台。',
-            '课表和考试情况。'
+            '线下课程录播、回放平台。可以观看已选课程和全校的公开课程录直播。'
         ],
         accessTag: 'mail',
         priority: 4,
@@ -78,7 +79,7 @@ const internalSites : SiteInfo[] = [
         icon: 'star',
         title: '电子校务平台 (OA)',
         site: 'oa.jlu.edu.cn',
-        description: ['吉林大学校内通知网，第一时间发布校务、学术、竞赛及奖学金等官方动态。'],
+        description: ['吉林大学校内通知网，第一时间发布活动、竞赛及奖学金等官方校务动态。'],
         accessTag: '教师邮箱登录',
         priority: 4,
         redirectDisabled: false
@@ -103,18 +104,9 @@ const internalSites : SiteInfo[] = [
     },
     {
         icon: null,
-        title: '大数据和网络管理中心',
-        site: 'nic.jlu.edu.cn',
-        description: ['有线网、无线网、WEBVPN指南及入网有关网站连接导航。'],
-        accessTag: null,
-        priority: 3,
-        redirectDisabled: false
-    },
-    {
-        icon: null,
         title: '图书馆',
         site: 'lib.jlu.edu.cn',
-        description: null,
+        description: ['馆藏图书资料及校外付费数据库文献资源的搜索查找索引。'],
         accessTag: null,
         priority: 3,
         redirectDisabled: false
@@ -130,18 +122,9 @@ const internalSites : SiteInfo[] = [
     },
     {
         icon: null,
-        title: '正版化软件平台',
-        site: 'zbhrj1.jlu.edu.cn',
-        description: ['Visio、Office、Matlab等软件正版下载。'],
-        accessTag: 'card',
-        priority: 3,
-        redirectDisabled: false
-    },
-    {
-        icon: null,
-        title: '吉大 DeepSeek',
-        site: 'deepseek.jlu.edu.cn',
-        description: null,
+        title: '智慧学工',
+        site: 'zhxg.jlu.edu.cn',
+        description: ['在线处理学生事务，如离返校申请、助评优申请、综合素质评价等。'],
         accessTag: 'mail',
         priority: 3,
         redirectDisabled: false
@@ -150,8 +133,44 @@ const internalSites : SiteInfo[] = [
         icon: null,
         title: '教务处',
         site: 'jwc.jlu.edu.cn',
-        description: ['电子教务处。提供成绩公示、成绩证明申请等功能。'],
+        description: ['电子教务处。提供本科教学信息、考试安排通知等。'],
         accessTag: null,
+        priority: 2,
+        redirectDisabled: false
+    },
+    {
+        icon: null,
+        title: '实践教学信息化系统',
+        site: 'oep.jlu.edu.cn',
+        description: ['开放性创新实验项目和科研训练项目的预览和申请网站。'],
+        accessTag: 'mail',
+        priority: 2,
+        redirectDisabled: false
+    },
+    {
+        icon: null,
+        title: '大数据和网络管理中心',
+        site: 'nic.jlu.edu.cn',
+        description: ['有线网、无线网、WEBVPN指南及入网有关网站连接导航。'],
+        accessTag: null,
+        priority: 2,
+        redirectDisabled: false
+    },
+    {
+        icon: null,
+        title: '正版化软件平台',
+        site: 'zbhrj.jlu.edu.cn',
+        description: ['Windows、腾讯会议、Visio、Office、Matlab 等教育正版软件的安装与激活。'],
+        accessTag: 'mail',
+        priority: 2,
+        redirectDisabled: false
+    },
+    {
+        icon: null,
+        title: '吉大 DeepSeek',
+        site: 'deepseek.jlu.edu.cn',
+        description: ['吉大本地化部署的 AI 工具。'],
+        accessTag: 'mail',
         priority: 2,
         redirectDisabled: false
     },
@@ -159,7 +178,7 @@ const internalSites : SiteInfo[] = [
         icon: null,
         title: '考试中心',
         site: 'kszx.jlu.edu.cn',
-        description: ['汉语、外语、计算机、法律及其它等级/证件考试咨询及申请导航。'],
+        description: ['汉语、外语、计算机、法律及其它等级/证件考试资讯导航。'],
         accessTag: null,
         priority: 2,
         redirectDisabled: false
@@ -168,8 +187,8 @@ const internalSites : SiteInfo[] = [
         icon: null,
         title: '网上办事大厅',
         site: 'ehall.jlu.edu.cn',
-        description: null,
-        accessTag: null,
+        description: ['校印使用、离长申请、社团信息变更等报备事务办理。'],
+        accessTag: 'mail',
         priority: 2,
         redirectDisabled: false
     },
@@ -177,7 +196,7 @@ const internalSites : SiteInfo[] = [
         icon: null,
         title: '迎新网站',
         site: 'yx.jlu.edu.cn',
-        description: ['新生注册、资料上传。查看邮箱账号密码。'],
+        description: ['用于新生账号注册、资料上传，并查看邮箱账号密码。'],
         accessTag: 'card',
         priority: 1,
         redirectDisabled: false

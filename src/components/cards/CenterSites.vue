@@ -1,6 +1,6 @@
 <script setup>
-import { normalSites } from "@/data/sites.ts";
-import SiteCard from "@/components/cards/SiteCard.vue";
+    import { normalSites } from "@/data/sites.ts";
+    import SiteCard from "@/components/cards/SiteCard.vue";
 </script>
 
 <template>

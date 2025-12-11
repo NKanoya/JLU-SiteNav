@@ -1,8 +1,6 @@
 <script setup>
-import SiteCard from "@/components/cards/SiteCard.vue";
-import {sites} from "@/data/sites.js";
-
-const topSites = sites.slice(0,2);
+    import SiteCard from "@/components/cards/SiteCard.vue";
+    import {topSites} from "@/data/sites.js";
 </script>
 <template>
     <template v-for="site in topSites">
