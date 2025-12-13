@@ -81,19 +81,6 @@ body {
     width: 1000px;
 }
 
-/* 悬浮框 */
-.tooltip {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    white-space: nowrap;
-    z-index: 9999;
-}
-
 @media (max-width: 768px) {
     .search-box {
         width: 90%;

@@ -32,9 +32,6 @@
         </div>
     </div>
 
-    <!-- 悬浮框内容 -->
-    <div class="tooltip new-page" style="width:10em;">点击在新标签页内打开</div>
-    <div class="tooltip tip-1">提示：由于学校教务系统访问要求，<br />请单击本框目右上角复制图标复制链接，<br />在地址栏中粘贴回车访问。</div>
 
 </template>
 
