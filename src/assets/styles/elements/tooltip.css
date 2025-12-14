@@ -1,0 +1,14 @@
+/* 悬浮框 */
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    width: auto !important;
+    left: 0;
+    top: 0;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: pre-line;
+    z-index: 9999;
+}

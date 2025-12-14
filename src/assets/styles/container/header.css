@@ -1,0 +1,39 @@
+/* 头部样式 */
+.header {
+    display: flex;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    max-width: 1000px;
+    gap: 20px;
+    margin: auto;
+    top: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.title-container {
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.title-box {
+    padding: 16px 20px;
+    border-radius: 25px;
+    min-width: 240px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+    font-size: 16px;
+    transition: background 0.3s;
+}
