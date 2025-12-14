@@ -4,6 +4,7 @@
     import { displayTooltip,
              hideTooltip,
              updateToolTipPosition } from '@/components/tooltip/tooltip-behaviour'
+    import { copyLinkToClipboard } from "@/components/copy/copy";
 
     const props = defineProps<{
         icon: string | null;
@@ -81,6 +82,7 @@
                 @mouseenter="displayTooltip('copyIcon')"
                 @mouseleave="hideTooltip"
                 @mousemove="updateToolTipPosition"
+                @click="copyLinkToClipboard('https://' +props.site)"
             >
                 <Icon type="copy" />
             </div>
