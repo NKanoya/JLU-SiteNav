@@ -1,0 +1,46 @@
+/* 复制链接悬浮框 */
+.floating-box {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #efe;
+    color: #030;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    display: none;
+    /* 初始隐藏 */
+    z-index: 1000;
+    opacity: 0;
+}
+
+/* 淡入淡出动画 */
+@keyframes slideInOut {
+    0% {
+        top: -50px;
+        opacity: 0;
+    }
+
+    10% {
+        top: 40px;
+        opacity: 1;
+    }
+
+    90% {
+        top: 40px;
+        opacity: 1;
+    }
+
+    100% {
+        top: -50px;
+        opacity: 0;
+    }
+}
+
+/* 添加动画到悬浮框 */
+.show {
+    display: block;
+    animation: slideInOut 2s ease-in-out forwards;
+}

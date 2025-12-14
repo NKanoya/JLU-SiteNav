@@ -13,4 +13,5 @@
 </template>
 
 <style scoped>
+    @import '@/assets/styles/elements/copy-floating-box.css';
 </style>

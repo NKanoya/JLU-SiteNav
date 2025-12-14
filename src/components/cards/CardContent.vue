@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import Icon from "@/components/Icon.vue";
+    import Icon from "@/components/icon/Icon.vue";
     import AccessTag from "@/components/tag/AccessTag.vue";
 
     const props = defineProps<{
@@ -35,5 +35,5 @@
 </template>
 
 <style scoped>
-    @import '@/assets/card.css';
+    @import '@/assets/styles/card/card.css';
 </style>

@@ -28,7 +28,7 @@
 </template>
 
 <style scoped>
-    @import '@/assets/tooltip.css';    /* 悬浮框主要样式 */
+    @import '@/assets/styles/elements/tooltip.css';    /* 悬浮框主要样式 */
     @import '@/assets/utility.css';    /* .hidden 样式 */
 
     .text {

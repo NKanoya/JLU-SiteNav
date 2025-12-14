@@ -12,5 +12,5 @@
 </template>
 
 <style scoped>
-    @import '@/assets/tag.css';
+    @import '@/assets/styles/elements/tag.css';
 </style>

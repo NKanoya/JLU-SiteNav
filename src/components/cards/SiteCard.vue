@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import Icon from "@/components/Icon.vue";
+    import Icon from "@/components/icon/Icon.vue";
     import CardContent from "@/components/cards/CardContent.vue";
     import { displayTooltip,
              hideTooltip,
@@ -91,7 +91,8 @@
 </template>
 
 <style scoped>
-    @import '@/assets/plus-icon.css';
-    @import '@/assets/card.css';
     @import '@/assets/utility.css';
+    @import '@/assets/styles/card/plus-icon.css';
+    @import '@/assets/styles/card/card.css';
+    @import '@/assets/styles/card/copy-icon.css';
 </style>

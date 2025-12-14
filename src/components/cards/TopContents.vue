@@ -15,7 +15,7 @@
     </template>
 </template>
 <style scoped>
-    @import '@/assets/plus-icon.css';
-    @import '@/assets/card.css';
+    @import '@/assets/styles/card/plus-icon.css';
+    @import '@/assets/styles/card/card.css';
     @import '@/assets/utility.css';
 </style>
