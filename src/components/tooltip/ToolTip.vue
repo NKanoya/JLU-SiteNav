@@ -3,21 +3,17 @@
     import {
         currentRedirectDisabled,
         toolTipContentType,
-        display,
-        toolTipPosition
+        display
     } from './tooltip-behaviour';
 </script>
 
 <template>
     <div
+        id="tooltip"
         :class="{
             tooltip: true,
             text: true,
             hidden: !display
-        }"
-        :style="{
-            left: toolTipPosition.pageX,
-            top: toolTipPosition.pageY
         }"
     >
         <!-- 显示无法直接跳转页面、需要拷贝链接访问的提示 -->

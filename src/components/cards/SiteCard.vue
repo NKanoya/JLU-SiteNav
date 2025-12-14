@@ -25,12 +25,13 @@
 
 <template>
     <template v-if="!props.redirectDisabled">
-        <div
-            class="card"
-            @mouseenter="displayTooltip('redirect')"
-            @mouseleave="hideTooltip"
-            @mousemove="updateToolTipPosition"
-        >
+<!--        <div-->
+<!--            class="card"-->
+<!--            @mouseenter="displayTooltip('redirect')"-->
+<!--            @mouseleave="hideTooltip"-->
+<!--            @mousemove="updateToolTipPosition"-->
+<!--        >-->
+        <div class="card">
             <!-- 允许跳转 -->
             <div class="inline" @click="accessInThisTab(props.site)">
                 <CardContent

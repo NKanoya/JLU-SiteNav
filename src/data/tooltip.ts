@@ -1,5 +1,3 @@
-
-
 interface TooltipContent {
     copyIcon: string;
     plusIcon: string;

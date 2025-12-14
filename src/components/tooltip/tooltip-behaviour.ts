@@ -2,17 +2,7 @@ import { ref, Ref } from 'vue';
 
 export const currentRedirectDisabled = ref('');
 export const toolTipContentType = ref('');
-export const display : Ref<boolean, boolean> = ref(true);
-
-interface pageAxis {
-    pageX: string,
-    pageY: string
-}
-
-export const toolTipPosition : Ref<pageAxis, pageAxis> = ref({
-    pageX: '0',
-    pageY: '0'
-});
+export const display : Ref<boolean, boolean> = ref(false);
 
 /**
  * @brief 按照显示内容的类型，更改悬浮框中的显示内容，并显示新的悬浮框
@@ -59,7 +49,7 @@ export const hideTooltip = () => {
  * @note 该函数会被暴露给 'SiteCard.vue' 使用，在需要显示悬浮框且鼠标移动时调用
  */
 export const updateToolTipPosition = (event) : void => {
-    // 悬浮框位置按鼠标位置右下 15px 偏移
-    toolTipPosition.value.pageX = (event.pageX + 15) + 'px';
-    toolTipPosition.value.pageY = (event.pageY + 15) + 'px';
+    const tooltipEl = document.getElementById('tooltip');
+    tooltipEl.style.left = `${event.pageX + 15}px`;
+    tooltipEl.style.top = `${event.pageY + 15}px`;
 };
