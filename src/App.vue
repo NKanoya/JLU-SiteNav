@@ -4,10 +4,12 @@
     import Header from "@/components/Header.vue";
     import TopCards from "@/components/TopCards.vue";
     import MainCards from "@/components/MainCards.vue";
+    import Background from "@/components/background/background.vue";
 </script>
 
 <template>
     <div>
+        <Background />
         <Header />
         <TopCards />
         <MainCards />

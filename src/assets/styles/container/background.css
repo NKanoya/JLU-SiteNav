@@ -1,0 +1,10 @@
+.background-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 放到最底层 */
+    pointer-events: none; /* 不干扰交互 */
+}
+
