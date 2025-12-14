@@ -41,6 +41,7 @@
 .site {
     font-weight: bold;
     display: inline-block;
+    font-size: 16px;
     margin-top: 5px;
     color: #000000;
     text-decoration: none;
