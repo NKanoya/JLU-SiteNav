@@ -1,6 +1,7 @@
 <script setup>
     import TopContents from "./cards/TopContents.vue";   // 顶部内容
     import CenterSites from "./cards/CenterSites.vue";   // 中间卡片
+    import ToolTip from './tooltip/ToolTip.vue';         // 悬浮框
 
     import '../assets/top.css'
 </script>
@@ -31,6 +32,8 @@
             <CenterSites />
         </div>
     </div>
+
+    <ToolTip />
 
 
 </template>
