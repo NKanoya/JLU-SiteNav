@@ -8,7 +8,8 @@
     "default_icon": {
       "16": "assets/icon1-16.png",
       "48": "assets/icon1-48.png",
-      "128": "assets/icon1-128.png"
+      "128": "assets/icon1-128.png",
+      "license": "MIT"
     }
   },
   "background": {
