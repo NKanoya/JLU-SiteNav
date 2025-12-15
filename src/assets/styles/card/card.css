@@ -32,6 +32,14 @@
     margin-bottom: 32px;
 }
 
+.unclickable-card {
+    cursor: default;
+}
+
+.unclickable-card:hover {
+    background: var(--card-bg);
+}
+
 .site-box {
     position: absolute;
     bottom: 20px;

@@ -56,8 +56,7 @@
     </template>
     <template v-else>
         <div
-            class="card"
-            style="cursor: default"
+            class="card unclickable-card"
             @mouseenter="displayTooltip({ newType: 'redirectDisabled', param : [props.title] })"
             @mouseleave="hideTooltip"
             @mousemove="updateToolTipPosition"
