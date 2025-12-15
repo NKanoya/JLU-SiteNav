@@ -31,4 +31,9 @@
         background-color: var(--floating-button-bg-hover);
         color: var(--floating-button-content-hover);
     }
+
+    .floating-button:active {
+        background-color: var(--floating-button-bg-click);
+        color: var(--floating-button-content-hover);
+    }
 </style>

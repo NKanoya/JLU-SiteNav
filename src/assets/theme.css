@@ -12,6 +12,7 @@
 
     --card-bg: #ffffff;           /* 卡片背景颜色 */
     --card-bg-hover: #f5f5f5;     /* 卡片背景悬浮时颜色 */
+    --card-bg-click: #e0e0e0;     /* 卡片单击悬浮时颜色 */
 
     --title-box-shadow: rgba(0, 0, 0, 0.1);   /* 标题盒阴影颜色 */
     --gray-icon: #bbb;
@@ -33,6 +34,7 @@
     /* 按钮配色 */
     --floating-button-bg: #fafafa;
     --floating-button-bg-hover: #e0e0e0;
+    --floating-button-bg-click: var(--card-bg-click);
     --floating-button-content: black;
     --floating-button-content-hover: black;
     --floating-button-shadow: rgba(0, 0, 0, 0.1);
@@ -41,12 +43,13 @@
 /* 暗色模式颜色 */
 html[data-theme="dark"] {
     --bg-pattern: #0e0f0e;
-    --bg-line: #2a2a2a;
+    --bg-line: #191919;
     --title: #dadada;
     --text: #dfe1e5;
     --icon: #dfe1e5;
     --card-bg: #2b2d30;
     --card-bg-hover: #202020;
+    --card-bg-click: #1a1a1a;
 
     --title-box-shadow: rgba(255, 255, 255, 0.15);
     --gray-icon: rgba(252, 252, 252, 0.4);
@@ -66,6 +69,7 @@ html[data-theme="dark"] {
     /* 按钮配色 */
     --floating-button-bg: #353638;
     --floating-button-bg-hover: #202020;
+    --floating-button-bg-click: var(--card-bg-click);
     --floating-button-content: white;
     --floating-button-content-hover: #bfbfbf;
     --floating-button-shadow: rgba(0, 0, 0, 0.1);
