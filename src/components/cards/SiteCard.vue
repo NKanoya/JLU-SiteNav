@@ -74,7 +74,7 @@
                     :accessTag="props.accessTag"
                 />
             </div>
-            <div class="need-copy plus-icon" style="cursor: default">
+            <div class="plus-icon gray-plus-icon" style="cursor: default">
                 <Icon type="gray-plus" />
             </div>
             <div

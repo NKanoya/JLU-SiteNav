@@ -18,3 +18,7 @@
 .valid-plus-icon:hover {
     transform: rotate(90deg) scale(1.2);
 }
+
+.gray-plus-icon {
+    color: var(--gray-icon);
+}
