@@ -1,3 +1,7 @@
+* {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 /* 默认亮色颜色 */
 :root {
     --bg-pattern: #f6f7f9;        /* 背景图案颜色 */
@@ -6,7 +10,7 @@
     --text: #333333;              /* 重要文本颜色 */
     --icon: #000000;              /* 图标颜色 */
 
-    --card-bg: #000000;           /* 卡片背景颜色 */
+    --card-bg: #ffffff;           /* 卡片背景颜色 */
     --card-bg-hover: #f5f5f5;     /* 卡片背景悬浮时颜色 */
 
     --title-box-shadow: rgba(0, 0, 0, 0.1);   /* 标题盒阴影颜色 */
@@ -20,7 +24,7 @@
     --tag-text-default: #333;
     --tag-text-purple: #113;
     --tag-text-green: #030;
-    --tag-text-red: #f0e0e0;
+    --tag-text-red: #030;
 
     /* 悬浮框配色 */
     --tooltip-bg: #333;
