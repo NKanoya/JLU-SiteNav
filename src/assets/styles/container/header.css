@@ -30,7 +30,7 @@
     min-width: 240px;
     border: none;
     outline: none;
-    background-color: #fff;
+    background-color: var(--card-bg);
     box-shadow: 0 4px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */

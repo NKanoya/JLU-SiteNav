@@ -1,12 +1,23 @@
 /* 默认亮色颜色 */
 :root {
-    --bg-pattern: #f6f7f9;       /* 背景图案颜色 */
-    --bg-line: #ffffff;          /* 背景线条颜色 */
+    --bg-pattern: #f6f7f9;        /* 背景图案颜色 */
+    --bg-line: #ffffff;           /* 背景线条颜色 */
+    --title: #000000;             /* 标题颜色 */
+    --text: #333333;              /* 重要文本颜色 */
+    --icon: #000000;              /* 图标颜色 */
+
+    --card-bg: #000000;           /* 卡片背景颜色 */
+    --card-bg-hover: #f5f5f5;     /* 卡片背景悬浮时颜色 */
 
 }
 
 /* 暗色模式颜色 */
 html[data-theme="dark"] {
-    --bg-pattern: #121212;
-    --bg-line: #2d2d2d;
+    --bg-pattern: #0e0f0e;
+    --bg-line: #222222;
+    --title: #dadada;
+    --text: #dfe1e5;
+    --icon: #dfe1e5;
+    --card-bg: #2b2d30;
+    --card-bg-hover: #202020;
 }

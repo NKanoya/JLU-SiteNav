@@ -3,7 +3,7 @@
     backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--card-bg);
     cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
@@ -11,20 +11,20 @@
 }
 
 .card:hover {
-    background: #f5f5f5;
+    background: var(--card-bg-hover);
     /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); */
 }
 
 .card h3 {
     margin: 0 0 10px;
     font-size: 20px;
-    color: #000000;
+    color: var(--title);
 }
 
 .card p {
     margin: 0 0 5px 0;
     font-size: 14px;
-    color: #333;
+    color: var(--text);
     flex-grow: 1;
 }
 
@@ -43,7 +43,7 @@
     display: inline-block;
     font-size: 16px;
     margin-top: 5px;
-    color: #000000;
+    color: var(--title);
     text-decoration: none;
     margin-right: 5px;
 }
