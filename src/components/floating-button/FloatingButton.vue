@@ -22,6 +22,9 @@
         align-items: center;
         margin-top: 15px;
 
+        box-shadow: 0 5px var(--floating-button-shadow);
+        backdrop-filter: blur(10px);
+
     }
 
     .floating-button:hover {
