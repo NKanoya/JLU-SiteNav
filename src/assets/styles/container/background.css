@@ -8,3 +8,11 @@
     pointer-events: none; /* 不干扰交互 */
 }
 
+.background-pattern {
+    color: var(--bg-pattern);
+}
+
+.background-line {
+    color: var(--bg-line);
+}
+
