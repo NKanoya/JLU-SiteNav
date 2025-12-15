@@ -1,6 +1,6 @@
 /* 悬浮框 */
 .tooltip {
-    position: absolute;
+    position: fixed;
     background-color: var(--tooltip-bg);
     width: auto !important;
     left: 0;

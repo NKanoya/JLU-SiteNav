@@ -41,7 +41,7 @@
 /* 暗色模式颜色 */
 html[data-theme="dark"] {
     --bg-pattern: #0e0f0e;
-    --bg-line: #222222;
+    --bg-line: #2a2a2a;
     --title: #dadada;
     --text: #dfe1e5;
     --icon: #dfe1e5;
