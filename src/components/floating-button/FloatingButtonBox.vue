@@ -32,7 +32,7 @@
             <Github />
         </FloatingButton>
         <FloatingButton
-            @click="toggleTheme"
+            @click="toggleTheme(); tooltipSwitchTheme();"
             @mouseenter="tooltipSwitchTheme"
             @mouseleave="hideTooltip"
             @mousemove="updateToolTipPosition"
