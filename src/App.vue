@@ -5,6 +5,7 @@
     import TopCards from "@/components/TopCards.vue";
     import MainCards from "@/components/MainCards.vue";
     import Background from "@/components/background/background.vue";
+    import FloatingButtonBox from "@/components/floating-button/FloatingButtonBox.vue";
 </script>
 
 <template>
@@ -15,6 +16,7 @@
         <MainCards />
         <ToolTip />         <!-- 悬浮框 -->
         <CopySuccess />     <!-- 拷贝成功提示栏 -->
+        <FloatingButtonBox />
     </div>
 </template>
 
