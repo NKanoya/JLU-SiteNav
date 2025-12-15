@@ -1,7 +1,7 @@
 import { ref, Ref } from 'vue';
+import { toolTipContentList, Formatted } from '@/data/tooltip'
 
-export const currentRedirectDisabled = ref('');
-export const toolTipContentType = ref('');
+export const toolTipContent = ref('');
 export const display : Ref<boolean, boolean> = ref(false);
 
 /**
@@ -9,30 +9,51 @@ export const display : Ref<boolean, boolean> = ref(false);
  *
  * @param newType 可选值如下
  * - 作为 string 时，可以使toolTipContent 中的键名
- * - 作为 [string, string] 时：可以是 ['redirectDisabled', (当前导航块的名称)]
+ * - 作为 { newType: string, param: any[] } 时： newType 为键名； param 为要替换占位符的内容
  *
  * @note 该函数会被暴露给 'SiteCard.vue' 使用，在需要显示隐藏悬浮框时调用
  */
-export const displayTooltip = (newType: string | [string, string]) => {
+export const displayTooltip = (newType: string | { newType: string, param: any[] } ) => {
+    // 单一字符串参数
     if(typeof newType === 'string') {
-        toolTipContentType.value = newType;
-        display.value = true;                   // 显示文本
-        return;
-    }
-
-    // ['redirectDisabled', (当前导航块的名称)]
-    if(newType[0] === 'redirectDisabled') {
-        toolTipContentType.value = 'redirectDisabled';
-        if(typeof newType[1] === 'string') {
-            currentRedirectDisabled.value = newType[1];
+        // 内容列表中查找是否存在该字符串键
+        if(toolTipContentList.hasOwnProperty(newType)) {
+            const content = toolTipContentList[newType];
+            // 如果字符串键对应的也是单一字符串文本值
+            if(typeof content === 'string') {
+                //
+                toolTipContent.value = content;
+                display.value = true;                   // 显示文本
+            } else {
+                // 字符串键存在，但对应的不是单一文本值
+                console.error('Argument \'' + newType + '\' of function displayToolTip() needs an array param!');
+            }
+            return;
         }
-        display.value = true;
-        return;
+
     }
 
-    {
-        console.error('Incorrect argument \'' + newType + '\' of function displayToolTip()!');
-    }
+    // { newType: string, param: any[] } 参数
+    // 不必判断：判断 newType 字段是否在内容列表的键中存在
+    // else if(toolTipContentList.hasOwnProperty(newType.newType)) {
+        const content = toolTipContentList[newType.newType];
+        // 判断字段对应的是否为 Formatted 对象
+        if(content instanceof Formatted) {
+            // 显示 format() 后的字符串
+            toolTipContent.value = content.format(newType.param);
+            display.value = true;                   // 显示文本
+            return;
+        }
+    //     else {
+    //         // 字符串键存在
+    //         console.error('Argument \'' + newType + '\' of function displayToolTip() does not need an array param!');
+    //     }
+    // }
+
+    // 参数错误，该键不存在
+    console.error('Incorrect argument \'' + newType + '\' of function displayToolTip()!');
+
+
 
 };
 
@@ -59,8 +80,8 @@ export const updateToolTipPosition = (event: MouseEvent): void => {
     const viewportWidth: number = window.innerWidth;
 
     // 鼠标当前位置
-    const mouseX: number = event.pageX;
-    const mouseY: number = event.pageY;
+    const mouseX: number = event.clientX;
+    const mouseY: number = event.clientY;
 
     // 默认的偏移量 (用于在鼠标和悬浮框之间留出空间)
     const OFFSET_X: number = 15;

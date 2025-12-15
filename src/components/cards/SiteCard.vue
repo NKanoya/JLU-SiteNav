@@ -58,7 +58,7 @@
         <div
             class="card"
             style="cursor: default"
-            @mouseenter="displayTooltip(['redirectDisabled', props.title])"
+            @mouseenter="displayTooltip({ newType: 'redirectDisabled', param : [props.title] })"
             @mouseleave="hideTooltip"
             @mousemove="updateToolTipPosition"
         >
