@@ -7,7 +7,6 @@ interface SiteInfo {
     description: string[] | null;
     accessTag: string | null;
     priority: number;
-    redirectDisabled: boolean;
 }
 
 const internalSites : SiteInfo[] = [
@@ -20,8 +19,7 @@ const internalSites : SiteInfo[] = [
         ],
         site: 'ip.jlu.edu.cn',
         accessTag: 'card',
-        priority: 6,
-        redirectDisabled: false
+        priority: 6
     },
     {
         title: 'WEBVPN',
@@ -32,7 +30,6 @@ const internalSites : SiteInfo[] = [
         site: 'vpn.jlu.edu.cn',
         accessTag: 'mail',
         priority: 6,
-        redirectDisabled: false,
     },
     {
         icon: 'star',
@@ -40,8 +37,7 @@ const internalSites : SiteInfo[] = [
         site: 'iedu.jlu.edu.cn',
         description: ['查看个人基本信息、课表、专业培养方案、考试安排、成绩查询。'],
         accessTag: 'mail',
-        priority: 5,
-        redirectDisabled: true
+        priority: 5
     },
     {
         icon: 'star',
@@ -49,8 +45,7 @@ const internalSites : SiteInfo[] = [
         site: 'jlu.fy.chaoxing.com',
         description: ['无需下载客户端也能在电脑使用。某些计算机作业可能需要在网页端提交。'],
         accessTag: '学习通登录',
-        priority: 4,
-        redirectDisabled: false
+        priority: 4
     },
     {
         icon: 'star',
@@ -60,8 +55,7 @@ const internalSites : SiteInfo[] = [
             '线下课程录播、回放平台。可以观看已选课程和全校的公开课程录直播。'
         ],
         accessTag: 'mail',
-        priority: 4,
-        redirectDisabled: false
+        priority: 4
     },
     {
         icon: 'star',
@@ -72,8 +66,7 @@ const internalSites : SiteInfo[] = [
             '培养方案及课表请查看教务管理系统。'
         ],
         accessTag: 'num',
-        priority: 4,
-        redirectDisabled: false
+        priority: 4
     },
     {
         icon: 'star',
@@ -81,8 +74,7 @@ const internalSites : SiteInfo[] = [
         site: 'oa.jlu.edu.cn',
         description: ['吉林大学校内通知网，第一时间发布活动、竞赛及奖学金等官方校务动态。'],
         accessTag: '教师邮箱登录',
-        priority: 4,
-        redirectDisabled: false
+        priority: 4
     },
     {
         icon: 'star',
@@ -90,8 +82,7 @@ const internalSites : SiteInfo[] = [
         site: 'zhihuishu.com',
         description: ['心理健康、职业规划、虚拟仿真实验等线上课程学习平台。'],
         accessTag: '平台账号登录',
-        priority: 4,
-        redirectDisabled: false
+        priority: 4
     },
     {
         icon: null,
@@ -99,8 +90,7 @@ const internalSites : SiteInfo[] = [
         site: 'www.jlu.edu.cn',
         description: ['吉林大学校园官网。'],
         accessTag: null,
-        priority: 3,
-        redirectDisabled: false
+        priority: 3
     },
     {
         icon: null,
@@ -108,8 +98,7 @@ const internalSites : SiteInfo[] = [
         site: 'lib.jlu.edu.cn',
         description: ['馆藏图书资料及校外付费数据库文献资源的搜索查找索引。'],
         accessTag: null,
-        priority: 3,
-        redirectDisabled: false
+        priority: 3
     },
     {
         icon: null,
@@ -117,8 +106,7 @@ const internalSites : SiteInfo[] = [
         site: 'mails.jlu.edu.cn',
         description: ['学生邮箱入口，可用于接受与发送邮件。'],
         accessTag: 'mail',
-        priority: 3,
-        redirectDisabled: false
+        priority: 3
     },
     {
         icon: null,
@@ -126,8 +114,7 @@ const internalSites : SiteInfo[] = [
         site: 'zhxg.jlu.edu.cn',
         description: ['在线处理学生事务，如离返校申请、助评优申请、综合素质评价等。'],
         accessTag: 'mail',
-        priority: 3,
-        redirectDisabled: false
+        priority: 3
     },
     {
         icon: null,
@@ -135,8 +122,7 @@ const internalSites : SiteInfo[] = [
         site: 'jwc.jlu.edu.cn',
         description: ['电子教务处。提供本科教学信息、考试安排通知等。'],
         accessTag: null,
-        priority: 2,
-        redirectDisabled: false
+        priority: 2
     },
     {
         icon: null,
@@ -144,8 +130,7 @@ const internalSites : SiteInfo[] = [
         site: 'oep.jlu.edu.cn',
         description: ['开放性创新实验项目和科研训练项目的预览和申请网站。'],
         accessTag: 'mail',
-        priority: 2,
-        redirectDisabled: false
+        priority: 2
     },
     {
         icon: null,
@@ -153,8 +138,7 @@ const internalSites : SiteInfo[] = [
         site: 'nic.jlu.edu.cn',
         description: ['有线网、无线网、WEBVPN指南及入网有关网站连接导航。'],
         accessTag: null,
-        priority: 2,
-        redirectDisabled: false
+        priority: 2
     },
     {
         icon: null,
@@ -162,8 +146,7 @@ const internalSites : SiteInfo[] = [
         site: 'zbhrj.jlu.edu.cn',
         description: ['Windows、腾讯会议、Visio、Office、Matlab 等教育正版软件的安装与激活。'],
         accessTag: 'mail',
-        priority: 2,
-        redirectDisabled: false
+        priority: 2
     },
     {
         icon: null,
@@ -171,8 +154,7 @@ const internalSites : SiteInfo[] = [
         site: 'deepseek.jlu.edu.cn',
         description: ['吉大本地化部署的 AI 工具。'],
         accessTag: 'mail',
-        priority: 2,
-        redirectDisabled: false
+        priority: 2
     },
     {
         icon: null,
@@ -180,8 +162,7 @@ const internalSites : SiteInfo[] = [
         site: 'kszx.jlu.edu.cn',
         description: ['汉语、外语、计算机、法律及其它等级/证件考试资讯导航。'],
         accessTag: null,
-        priority: 2,
-        redirectDisabled: false
+        priority: 2
     },
     {
         icon: null,
@@ -189,8 +170,7 @@ const internalSites : SiteInfo[] = [
         site: 'ehall.jlu.edu.cn',
         description: ['校印使用、离长申请、社团信息变更等报备事务办理。'],
         accessTag: 'mail',
-        priority: 2,
-        redirectDisabled: false
+        priority: 2
     },
     {
         icon: null,
@@ -198,8 +178,7 @@ const internalSites : SiteInfo[] = [
         site: 'yx.jlu.edu.cn',
         description: ['用于新生账号注册、资料上传，并查看邮箱账号密码。'],
         accessTag: 'card',
-        priority: 1,
-        redirectDisabled: false
+        priority: 1
     },
     {
         icon: null,
@@ -207,8 +186,7 @@ const internalSites : SiteInfo[] = [
         site: 'dsf.jlu.edu.cn',
         description: ['使用绑定的中国银行卡充值校园卡。'],
         accessTag: 'card',
-        priority: 1,
-        redirectDisabled: false
+        priority: 1
     }
 
 ];

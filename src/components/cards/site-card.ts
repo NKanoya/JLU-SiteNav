@@ -1,15 +1,6 @@
 import {displayTooltip, hideTooltip, updateToolTipPosition} from "@/components/tooltip/tooltip-behaviour";
 import { copyLinkToClipboard }  from "@/components/copy/copy";
-
-export const accessSite = {
-    inNewTab: (site: string) : void => {
-        window.open('http://' + site, '_blank');
-    },
-
-    inCurrentTab: (site: string) : void => {
-        window.location.href = 'http://' + site;
-    }
-}
+import { safeRedirect as accessSite } from "@/components/cards/safe-redirect";
 
 // 鼠标事件类型
 interface ElementMouseEvent {
@@ -50,12 +41,8 @@ export const cardsMouseEvents : MouseEvents = {
         mouseenter: () : void => {
             displayTooltip('copyIcon');     // 显示状态
         },
-        mouseleave: (isCardRedirectDisabled: boolean, title: string) : void => {
-            if(isCardRedirectDisabled) {
-                displayTooltip({ newType: 'redirectDisabled', param: [title] });
-            } else {
-                hideTooltip();
-            }
+        mouseleave: (title: string) : void => {
+            hideTooltip();
         },
         mousemove: (event: any): void => {
             updateToolTipPosition(event);
@@ -72,7 +59,7 @@ export const cardsMouseEvents : MouseEvents = {
         },
 
         click: (event: any, site: string): void => {
-            accessSite.inNewTab(site);
+            accessSite.inNewTab('https://' + site);
             event.stopPropagation();       // 阻止向上冒泡
         },
         mousemove: (event: any): void => {
@@ -92,8 +79,7 @@ export const cardsMouseEvents : MouseEvents = {
         },
 
         click: (event: any, site: string) : void => {
-            console.log(event.target.classList);
-            accessSite.inCurrentTab(site);
+            accessSite.inCurrentTab('https://' + site);
         }
     }
 };
