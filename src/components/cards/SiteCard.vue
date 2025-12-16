@@ -1,9 +1,6 @@
 <script setup lang="ts">
     import Icon from "@/components/icon/Icon.vue";
     import CardContent from "@/components/cards/CardContent.vue";
-    import { displayTooltip,
-             hideTooltip,
-             updateToolTipPosition } from '@/components/tooltip/tooltip-behaviour'
 
     const props = defineProps<{
         icon: string | null;
@@ -11,12 +8,10 @@
         description: string[];
         site: string;
         accessTag: string | null;
-        redirectDisabled: boolean;
     }>();
 
     import { cardsMouseEvents } from './site-card';
     import CopyButton from "@/components/copy/CopyButton.vue";
-    import {safeRedirect} from "@/components/cards/safe-redirect";
 
     const cardEvents = cardsMouseEvents.card;
     const plusIconEvents = cardsMouseEvents.plusIcon;

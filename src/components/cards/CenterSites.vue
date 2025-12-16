@@ -11,7 +11,6 @@
             :description="site.description"
             :site="site.site"
             :access-tag="site.accessTag"
-            :redirect-disabled="site.redirectDisabled"
         />
     </template>
 </template>
