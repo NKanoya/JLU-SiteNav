@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "JLU Site Navigator",
-  "version": "1.1.0",
+  "version": "1.1.0.100",
   "description": "吉林大学校园网资源快速导航。点击扩展图标打开导航页。",
 
   "action": {
