@@ -4,7 +4,6 @@
     import { displayTooltip,
              hideTooltip,
              updateToolTipPosition } from '@/components/tooltip/tooltip-behaviour'
-    import { copyLinkToClipboard } from "@/components/copy/copy";
 
     const props = defineProps<{
         icon: string | null;
@@ -15,13 +14,13 @@
         redirectDisabled: boolean;
     }>();
 
-    const accessInThisTab = (site: string) : void => {
-        window.location.href = 'http://' + site;
-    }
+    import { cardsMouseEvents } from './site-card';
 
-    const accessInNewTab = (site: string) : void => {
-        window.open('http://' + site, '_blank');
-    }
+    const cardEvents = cardsMouseEvents.card;
+    const copyIconEvents = cardsMouseEvents.copyIcon;
+    const plusIconEvents = cardsMouseEvents.plusIcon;
+
+
 </script>
 
 <template>
@@ -32,9 +31,14 @@
 <!--            @mouseleave="hideTooltip"-->
 <!--            @mousemove="updateToolTipPosition"-->
 <!--        >-->
-        <div class="card">
+        <div
+            class="card"
+            @mousedown="cardEvents.mousedown($event)"
+            @mouseup="cardEvents.mouseup"
+            @click="cardEvents.click($event, props.site)"
+        >
             <!-- 允许跳转 -->
-            <div class="inline" @click="accessInThisTab(props.site)">
+            <div class="inline">
                 <CardContent
                     :icon="props.icon"
                     :title="props.title"
@@ -45,12 +49,23 @@
             </div>
             <div
                 class="plus-icon valid-plus-icon"
-                @click="accessInNewTab(props.site)"
-                @mouseenter="displayTooltip('plusIcon')"
-                @mouseleave="hideTooltip"
-                @mousemove="updateToolTipPosition"
+                @click="plusIconEvents.click($event, props.site)"
+                @mouseenter="plusIconEvents.mouseenter"
+                @mouseleave="plusIconEvents.mouseleave"
+                @mousemove="plusIconEvents.mousemove"
             >
                 <Icon type="plus" />
+            </div>
+            <div
+                class="copy-icon"
+                @mouseenter="copyIconEvents.mouseenter"
+                @mouseleave="copyIconEvents.mouseleave(props)"
+                @mousemove="copyIconEvents.mousemove"
+                @click="copyIconEvents.click($event, props);"
+                @mousedown="copyIconEvents.mousedown"
+                @mouseup="copyIconEvents.mouseup"
+            >
+                <Icon type="copy" />
             </div>
         </div>
     </template>
@@ -78,10 +93,12 @@
             </div>
             <div
                 class="copy-icon"
-                @mouseenter="displayTooltip('copyIcon')"
-                @mouseleave="hideTooltip"
-                @mousemove="updateToolTipPosition"
-                @click="copyLinkToClipboard('https://' +props.site)"
+                @mouseenter="copyIconEvents.mouseenter"
+                @mouseleave="copyIconEvents.mouseleave(props)"
+                @mousemove="copyIconEvents.mousemove"
+                @click="copyIconEvents.click($event, props);"
+                @mousedown="copyIconEvents.mousedown"
+                @mouseup="copyIconEvents.mouseup"
             >
                 <Icon type="copy" />
             </div>

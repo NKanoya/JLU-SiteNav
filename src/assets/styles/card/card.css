@@ -15,8 +15,8 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.card:active {
-    background: var(--card-bg-click);
+.card-active {
+    background: var(--card-bg-click) !important;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 

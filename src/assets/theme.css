@@ -16,6 +16,8 @@
 
     --title-box-shadow: rgba(0, 0, 0, 0.1);   /* 标题盒阴影颜色 */
     --gray-icon: #bbb;
+    --copy-icon-hover: #ddd;
+    --copy-icon-active: #888;
 
     /* 标签配色 */
     --tag-bg-default: #e0e0e0;
@@ -49,10 +51,11 @@ html[data-theme="dark"] {
     --icon: #dfe1e5;
     --card-bg: #2b2d30;
     --card-bg-hover: #202020;
-    --card-bg-click: #1a1a1a;
+    --card-bg-click: #151515;
 
     --title-box-shadow: rgba(255, 255, 255, 0.15);
     --gray-icon: rgba(252, 252, 252, 0.4);
+    --copy-icon-hover: #333;
 
     --tag-bg-default: rgba(252, 252, 252, 0.2);
     --tag-bg-purple: rgba(139, 92, 246, 0.2);
