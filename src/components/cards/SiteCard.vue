@@ -4,7 +4,6 @@
     import { displayTooltip,
              hideTooltip,
              updateToolTipPosition } from '@/components/tooltip/tooltip-behaviour'
-    import { copyLinkToClipboard } from "@/components/copy/copy";
 
     const props = defineProps<{
         icon: string | null;
@@ -15,13 +14,13 @@
         redirectDisabled: boolean;
     }>();
 
-    const accessInThisTab = (site: string) : void => {
-        window.location.href = 'http://' + site;
-    }
+    import { cardsMouseEvents } from './site-card';
+    import CopyButton from "@/components/copy/CopyButton.vue";
 
-    const accessInNewTab = (site: string) : void => {
-        window.open('http://' + site, '_blank');
-    }
+    const cardEvents = cardsMouseEvents.card;
+    const plusIconEvents = cardsMouseEvents.plusIcon;
+
+
 </script>
 
 <template>
@@ -32,9 +31,14 @@
 <!--            @mouseleave="hideTooltip"-->
 <!--            @mousemove="updateToolTipPosition"-->
 <!--        >-->
-        <div class="card">
+        <div
+            class="card"
+            @mousedown="cardEvents.mousedown($event)"
+            @mouseup="cardEvents.mouseup"
+            @click="cardEvents.click($event, props.site)"
+        >
             <!-- 允许跳转 -->
-            <div class="inline" @click="accessInThisTab(props.site)">
+            <div class="inline">
                 <CardContent
                     :icon="props.icon"
                     :title="props.title"
@@ -45,20 +49,20 @@
             </div>
             <div
                 class="plus-icon valid-plus-icon"
-                @click="accessInNewTab(props.site)"
-                @mouseenter="displayTooltip('plusIcon')"
-                @mouseleave="hideTooltip"
-                @mousemove="updateToolTipPosition"
+                @click="plusIconEvents.click($event, props.site)"
+                @mouseenter="plusIconEvents.mouseenter"
+                @mouseleave="plusIconEvents.mouseleave"
+                @mousemove="plusIconEvents.mousemove"
             >
                 <Icon type="plus" />
             </div>
+            <CopyButton :site="props.site" />
         </div>
     </template>
     <template v-else>
         <div
-            class="card"
-            style="cursor: default"
-            @mouseenter="displayTooltip(['redirectDisabled', props.title])"
+            class="card unclickable-card"
+            @mouseenter="displayTooltip({ newType: 'redirectDisabled', param : [props.title] })"
             @mouseleave="hideTooltip"
             @mousemove="updateToolTipPosition"
         >
@@ -74,18 +78,10 @@
                     :accessTag="props.accessTag"
                 />
             </div>
-            <div class="need-copy plus-icon" style="cursor: default">
+            <div class="plus-icon gray-plus-icon" style="cursor: default">
                 <Icon type="gray-plus" />
             </div>
-            <div
-                class="copy-icon"
-                @mouseenter="displayTooltip('copyIcon')"
-                @mouseleave="hideTooltip"
-                @mousemove="updateToolTipPosition"
-                @click="copyLinkToClipboard('https://' +props.site)"
-            >
-                <Icon type="copy" />
-            </div>
+            <CopyButton :site="props.site" is-card-redirect-disabled="is-card-redirect-disabled"/>
         </div>
     </template>
 </template>

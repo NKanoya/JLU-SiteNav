@@ -1,0 +1,79 @@
+* {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* 默认亮色颜色 */
+:root {
+    --bg-pattern: #f6f7f9;        /* 背景图案颜色 */
+    --bg-line: #ffffff;           /* 背景线条颜色 */
+    --title: #000000;             /* 标题颜色 */
+    --text: #333333;              /* 重要文本颜色 */
+    --icon: #000000;              /* 图标颜色 */
+
+    --card-bg: #ffffff;           /* 卡片背景颜色 */
+    --card-bg-hover: #f5f5f5;     /* 卡片背景悬浮时颜色 */
+    --card-bg-click: #e0e0e0;     /* 卡片单击悬浮时颜色 */
+
+    --title-box-shadow: rgba(0, 0, 0, 0.1);   /* 标题盒阴影颜色 */
+    --gray-icon: #bbb;
+    --copy-icon-hover: #ddd;
+    --copy-icon-active: #888;
+
+    /* 标签配色 */
+    --tag-bg-default: #e0e0e0;
+    --tag-bg-purple: #e0e0f0;
+    --tag-bg-green: #ddf0dd;
+    --tag-bg-red: #f0e0e0;
+    --tag-text-default: #333;
+    --tag-text-purple: #113;
+    --tag-text-green: #030;
+    --tag-text-red: #030;
+
+    /* 悬浮框配色 */
+    --tooltip-bg: #333;
+    --tooltip-text: white;
+
+    /* 按钮配色 */
+    --floating-button-bg: #fafafa;
+    --floating-button-bg-hover: #e0e0e0;
+    --floating-button-bg-click: var(--card-bg-click);
+    --floating-button-content: black;
+    --floating-button-content-hover: black;
+    --floating-button-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* 暗色模式颜色 */
+html[data-theme="dark"] {
+    --bg-pattern: #0e0f0e;
+    --bg-line: #191919;
+    --title: #dadada;
+    --text: #dfe1e5;
+    --icon: #dfe1e5;
+    --card-bg: #2b2d30;
+    --card-bg-hover: #202020;
+    --card-bg-click: #151515;
+
+    --title-box-shadow: rgba(255, 255, 255, 0.15);
+    --gray-icon: rgba(252, 252, 252, 0.4);
+    --copy-icon-hover: #333;
+
+    --tag-bg-default: rgba(252, 252, 252, 0.2);
+    --tag-bg-purple: rgba(139, 92, 246, 0.2);
+    --tag-bg-green: rgba(34, 197, 94, 0.2);
+    --tag-bg-red: rgba(239, 68, 68, 0.2);
+    --tag-text-default: #e0e0e0;
+    --tag-text-purple: #c4b5fd;
+    --tag-text-green: #86efac;
+    --tag-text-red: #fca5a5;
+
+    --tooltip-bg: #424242;
+    --tooltip-text: white;
+
+    /* 按钮配色 */
+    --floating-button-bg: #353638;
+    --floating-button-bg-hover: #202020;
+    --floating-button-bg-click: var(--card-bg-click);
+    --floating-button-content: white;
+    --floating-button-content-hover: #bfbfbf;
+    --floating-button-shadow: rgba(0, 0, 0, 0.1);
+}

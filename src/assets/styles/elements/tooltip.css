@@ -1,11 +1,11 @@
 /* 悬浮框 */
 .tooltip {
-    position: absolute;
-    background-color: #333;
+    position: fixed;
+    background-color: var(--tooltip-bg);
     width: auto !important;
     left: 0;
     top: 0;
-    color: white;
+    color: var(--tooltip-text);
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 14px;

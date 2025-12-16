@@ -1,17 +1,21 @@
 .copy-icon {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     width: 40px;
     height: 40px;
     display: flex;
     border-radius: 20px;
     justify-content: center;
     align-items: center;
-    color: #000;
+    color: var(--icon);
     transition: background-color 0.4s;
 }
 
-.copy-icon:active {
-    background-color: #888;
+.copy-icon:hover {
+    background-color: var(--copy-icon-hover);
+}
+
+.copy-icon-active {
+    background-color: var(--copy-icon-active) !important;
 }

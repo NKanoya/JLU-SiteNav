@@ -1,8 +1,8 @@
 /* 登录标签 */
 .tag {
     display: inline-block;
-    background-color: #e0e0e0;
-    color: #333;
+    background-color: var(--tag-bg-default);
+    color: var(--tag-text-default);
     font-size: 0.5em;
     padding: 3px 5px 3px 5px;
     border-radius: 5px;
@@ -11,18 +11,18 @@
 
 /* 邮箱登录标签 */
 .mail-tag {
-    background-color: #e0e0f0;
-    color: #113;
+    background-color: var(--tag-bg-purple);
+    color: var(--tag-text-purple);
 }
 
 .num-tag {
-    background-color: #ddf0dd;
-    color: #030;
+    background-color: var(--tag-bg-green);
+    color: var(--tag-text-green);
 }
 
 .card-tag {
-    background-color: #f0e0e0;
-    color: #311;
+    background-color: var(--tag-bg-red);
+    color: var(--tag-text-red);
 }
 
 .tag-display {

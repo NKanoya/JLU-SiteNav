@@ -1,8 +1,6 @@
 <script setup lang="ts">
-    import { toolTipContent } from '@/data/tooltip';
     import {
-        currentRedirectDisabled,
-        toolTipContentType,
+        toolTipContent,
         display
     } from './tooltip-behaviour';
 </script>
@@ -16,14 +14,7 @@
             hidden: !display
         }"
     >
-        <!-- 显示无法直接跳转页面、需要拷贝链接访问的提示 -->
-        <template v-if="toolTipContentType === 'redirectDisabled'">
-            {{ toolTipContent.format('redirectDisabled', [currentRedirectDisabled]) }}
-        </template>
-        <!-- 其它悬浮框提示 -->
-        <template v-else>
-            {{ toolTipContent[toolTipContentType] }}
-        </template>
+        {{ toolTipContent }}
     </div>
 </template>
 
