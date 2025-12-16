@@ -8,7 +8,7 @@
     };
 
     import { toggleTheme } from './brightness.js';
-    import {displayTooltip, hideTooltip, updateToolTipPosition} from '@/components/tooltip/tooltip-behaviour';
+    import { displayTooltip, hideTooltip, updateToolTipPosition } from '@/components/tooltip/tooltip-behaviour';
 
     const tooltipSwitchTheme = () => {
         const html = document.documentElement;
@@ -43,11 +43,5 @@
 </template>
 
 <style scoped>
-    .floating-button-box {
-        position: fixed;
-        right:35px;
-        bottom:35px;
-
-        z-index:999;
-    }
+    @import '@/assets/styles/elements/floating-button.css';
 </style>
