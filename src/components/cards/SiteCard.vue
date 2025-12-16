@@ -16,6 +16,7 @@
 
     import { cardsMouseEvents } from './site-card';
     import CopyButton from "@/components/copy/CopyButton.vue";
+    import {safeRedirect} from "@/components/cards/safe-redirect";
 
     const cardEvents = cardsMouseEvents.card;
     const plusIconEvents = cardsMouseEvents.plusIcon;
@@ -24,66 +25,39 @@
 </script>
 
 <template>
-    <template v-if="!props.redirectDisabled">
 <!--        <div-->
 <!--            class="card"-->
 <!--            @mouseenter="displayTooltip('redirect')"-->
 <!--            @mouseleave="hideTooltip"-->
 <!--            @mousemove="updateToolTipPosition"-->
 <!--        >-->
-        <div
-            class="card"
-            @mousedown="cardEvents.mousedown($event)"
-            @mouseup="cardEvents.mouseup"
-            @click="cardEvents.click($event, props.site)"
-        >
-            <!-- 允许跳转 -->
-            <div class="inline">
-                <CardContent
-                    :icon="props.icon"
-                    :title="props.title"
-                    :description="props.description"
-                    :site="site"
-                    :accessTag="props.accessTag"
-                />
-            </div>
-            <div
-                class="plus-icon valid-plus-icon"
-                @click="plusIconEvents.click($event, props.site)"
-                @mouseenter="plusIconEvents.mouseenter"
-                @mouseleave="plusIconEvents.mouseleave"
-                @mousemove="plusIconEvents.mousemove"
-            >
-                <Icon type="plus" />
-            </div>
-            <CopyButton :site="props.site" />
+    <div
+        class="card"
+        @mousedown="cardEvents.mousedown($event)"
+        @mouseup="cardEvents.mouseup"
+        @click="cardEvents.click($event, props.site)"
+    >
+        <!-- 允许跳转 -->
+        <div class="inline">
+            <CardContent
+                :icon="props.icon"
+                :title="props.title"
+                :description="props.description"
+                :site="site"
+                :accessTag="props.accessTag"
+            />
         </div>
-    </template>
-    <template v-else>
         <div
-            class="card unclickable-card"
-            @mouseenter="displayTooltip({ newType: 'redirectDisabled', param : [props.title] })"
-            @mouseleave="hideTooltip"
-            @mousemove="updateToolTipPosition"
+            class="plus-icon valid-plus-icon"
+            @click="plusIconEvents.click($event, props.site)"
+            @mouseenter="plusIconEvents.mouseenter"
+            @mouseleave="plusIconEvents.mouseleave"
+            @mousemove="plusIconEvents.mousemove"
         >
-            <!-- 不允许跳转，无点击跳转事件 -->
-            <div
-                class="inline"
-            >
-                <CardContent
-                    :icon="props.icon"
-                    :title="props.title"
-                    :description="props.description"
-                    :site="site"
-                    :accessTag="props.accessTag"
-                />
-            </div>
-            <div class="plus-icon gray-plus-icon" style="cursor: default">
-                <Icon type="gray-plus" />
-            </div>
-            <CopyButton :site="props.site" is-card-redirect-disabled="is-card-redirect-disabled"/>
+            <Icon type="plus" />
         </div>
-    </template>
+        <CopyButton :site="props.site" />
+    </div>
 </template>
 
 <style scoped>

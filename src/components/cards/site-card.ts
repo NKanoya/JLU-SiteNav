@@ -1,13 +1,14 @@
 import {displayTooltip, hideTooltip, updateToolTipPosition} from "@/components/tooltip/tooltip-behaviour";
 import { copyLinkToClipboard }  from "@/components/copy/copy";
+import { safeRedirect } from "@/components/cards/safe-redirect";
 
 export const accessSite = {
     inNewTab: (site: string) : void => {
-        window.open('http://' + site, '_blank');
+       safeRedirect.inNewTab('http://' + site);
     },
 
     inCurrentTab: (site: string) : void => {
-        window.location.href = 'http://' + site;
+        safeRedirect.inCurrentTab('http://' + site);
     }
 }
 
@@ -92,7 +93,6 @@ export const cardsMouseEvents : MouseEvents = {
         },
 
         click: (event: any, site: string) : void => {
-            console.log(event.target.classList);
             accessSite.inCurrentTab(site);
         }
     }
