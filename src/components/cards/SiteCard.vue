@@ -15,9 +15,9 @@
     }>();
 
     import { cardsMouseEvents } from './site-card';
+    import CopyButton from "@/components/copy/CopyButton.vue";
 
     const cardEvents = cardsMouseEvents.card;
-    const copyIconEvents = cardsMouseEvents.copyIcon;
     const plusIconEvents = cardsMouseEvents.plusIcon;
 
 
@@ -56,17 +56,7 @@
             >
                 <Icon type="plus" />
             </div>
-            <div
-                class="copy-icon"
-                @mouseenter="copyIconEvents.mouseenter"
-                @mouseleave="copyIconEvents.mouseleave(props)"
-                @mousemove="copyIconEvents.mousemove"
-                @click="copyIconEvents.click($event, props);"
-                @mousedown="copyIconEvents.mousedown"
-                @mouseup="copyIconEvents.mouseup"
-            >
-                <Icon type="copy" />
-            </div>
+            <CopyButton :site="props.site" />
         </div>
     </template>
     <template v-else>
@@ -91,17 +81,7 @@
             <div class="plus-icon gray-plus-icon" style="cursor: default">
                 <Icon type="gray-plus" />
             </div>
-            <div
-                class="copy-icon"
-                @mouseenter="copyIconEvents.mouseenter"
-                @mouseleave="copyIconEvents.mouseleave(props)"
-                @mousemove="copyIconEvents.mousemove"
-                @click="copyIconEvents.click($event, props);"
-                @mousedown="copyIconEvents.mousedown"
-                @mouseup="copyIconEvents.mouseup"
-            >
-                <Icon type="copy" />
-            </div>
+            <CopyButton :site="props.site" is-card-redirect-disabled="is-card-redirect-disabled"/>
         </div>
     </template>
 </template>

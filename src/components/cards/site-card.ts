@@ -1,5 +1,4 @@
 import {displayTooltip, hideTooltip, updateToolTipPosition} from "@/components/tooltip/tooltip-behaviour";
-import { ref } from "vue";
 import { copyLinkToClipboard }  from "@/components/copy/copy";
 
 export const accessSite = {
@@ -44,16 +43,16 @@ export const cardsMouseEvents : MouseEvents = {
             event.stopPropagation();
         },
 
-        click: (event: any, props: any) : void => {
-            copyLinkToClipboard('https://' + props.site);
+        click: (event: any, site: string) : void => {
+            copyLinkToClipboard('https://' + site);
             event.stopPropagation();       // 阻止向上冒泡
         },
         mouseenter: () : void => {
             displayTooltip('copyIcon');     // 显示状态
         },
-        mouseleave: (props: any) : void => {
-            if(props.redirectDisabled) {
-                displayTooltip({ newType: 'redirectDisabled', param: [props.title] });
+        mouseleave: (isCardRedirectDisabled: boolean, title: string) : void => {
+            if(isCardRedirectDisabled) {
+                displayTooltip({ newType: 'redirectDisabled', param: [title] });
             } else {
                 hideTooltip();
             }
